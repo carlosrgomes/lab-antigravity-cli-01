@@ -18,37 +18,22 @@ A diferença entre a IA gerar um "código genérico" e um "código excepcional" 
 
 ---
 
-## Passo 2: O Gatilho de Refatoração de Código
+## Passo 2: O Mega-Prompt (Refatoração + Infraestrutura)
 
-Em vez de pedir "faça um site bonito", foque no objetivo técnico. Como o nosso contexto (passo 1) já tem as regras de design e de HTML, o prompt pode ser simples e direto.
+Em vez de pedir as coisas fragmentadas ("faça o css", depois "faça o docker"), você pode e deve agrupar tarefas relacionadas num mesmo prompt para economizar tempo. Como o contexto (passo 1) já tem as regras de design e de HTML, basta focar no "o quê" precisa ser feito.
 
 💬 **Prompt que você deve usar:**
-> *"refatore o projeto"* ou *"analise os arquivos html desta pasta e aplique a folha de estilos do zero seguindo as regras do GEMINI.md"*
+> *"refatore o projeto aplicando as diretrizes de design do GEMINI.md e logo em seguida já crie a infraestrutura DevOps para subir isso num container docker (usando nginx)"*
 
 🤖 **Como a IA vai agir:**
-1. A IA entrará em **Planning Mode**. Ela vai ler seus arquivos (ex: `index.html`), notar o padrão antigo e criar um artefato chamado `implementation_plan.md` com uma proposta técnica.
-2. Ela te pedirá aprovação.
-3. Após você aprovar com um `[Approved]`, a IA vai programar sozinha: criará o arquivo `style.css`, usará `CSS Grid`, aplicará responsividade, cores e animações de hover.
+1. A IA entrará em **Planning Mode** e criará um `implementation_plan.md` gigantesco com a proposta técnica para ambas as tarefas.
+2. Após você aprovar com um `[Approved]`, a IA vai programar as duas frentes sozinha:
+   - **Frontend:** Criará o arquivo `style.css`, usará `CSS Grid`, aplicará responsividade, cores curadas e animações de hover.
+   - **Infraestrutura:** Gerará o `Dockerfile` (usando `nginx:alpine`), `.dockerignore` e `docker-compose.yml`.
 
 ---
 
-## Passo 3: DevOps e Infraestrutura como Código
-
-Não use a IA apenas para CSS/HTML. Ela também escreve Dockerfiles e orquestra a infraestrutura do seu projeto. Vamos empacotar esse site novo!
-
-💬 **Prompt que você deve usar:**
-> *"preciso fazer o deploy desse site web em um container. rodou o devops para subir em container precisa ter isso"* ou *"Crie os arquivos necessários para servir esse frontend estático usando docker e nginx"*
-
-🤖 **Como a IA vai agir:**
-1. Novamente o agente vai gerar um plano de infraestrutura focado na melhor tecnologia para o problema (no nosso caso, `nginx:alpine` por ser o padrão leve do mercado).
-2. Após sua aprovação, ela vai gerar três arquivos autônomamente: 
-   - `Dockerfile` (a receita da imagem).
-   - `.dockerignore` (para não vazar cache pro container).
-   - `docker-compose.yml` (para facilitar o deploy mapeando a porta 8080).
-
----
-
-## Passo 4: Executando Comandos na Máquina Real
+## Passo 3: Executando Comandos na Máquina Real
 
 Agentes de desenvolvimento avançados não só cospem texto, eles interagem com a máquina via terminal. Vamos pedir para a IA subir o nosso container recém-criado.
 
@@ -62,7 +47,7 @@ Agentes de desenvolvimento avançados não só cospem texto, eles interagem com 
 
 ---
 
-## Passo 5: Teardown (Desmontando o ambiente)
+## Passo 4: Teardown (Desmontando o ambiente)
 
 Ao finalizar a validação, use a IA para limpar a sujeira e manter seu ambiente organizado.
 
