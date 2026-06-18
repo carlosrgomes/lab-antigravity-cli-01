@@ -1,119 +1,272 @@
-<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
-<html><head>
-<title>pnwx.com - Pacific Northwest X-Ray Inc.</title>
-<link rel="icon" href="favicon.ico">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacific Northwest X-Ray Inc. - Radiology Equipment & Supplies</title>
+  <meta name="description" content="Pacific Northwest X-Ray Inc. (PNWX) is a leading provider of professional x-ray equipment, radiology supplies, parts, and medical accessories. Serving since 1997.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- FOUC (Flash of Unstyled Content) Prevention Script -->
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('color-scheme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      const meta = document.querySelector('meta[name="color-scheme"]');
+      if (meta) {
+        meta.content = theme === 'dark' ? 'dark' : 'light';
+      }
+    })();
+  </script>
 </head>
-<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#FFFF00" VLINK="#551A8B" ALINK="#FF0000" BACKGROUND="skyimge.jpg">
-<CENTER><IMG SRC="pnwx_ani.gif" ALT="Pacific Northwest X-Ray Inc."><IMG SRC="pnwx.gif" ALT="X-Ray - radiology equipment, supplies, parts and accessories!"></CENTER>
-<CENTER>&nbsp</CENTER><A HREF="http://www.pnwx.com/cgi-bin/e-mail"></A>
+<body>
 
-<center>
- <table border=0 cellspacing=10 cellpadding=0>
-  <tr>
-   <td>
-    <center><font face="Arial" color="#000000" size="+3">Search for X-Ray Products.</font></center>
-   </td>
-   <td><img src="Arrow.png" border=0></td>
-   <td><form action="/Search/" method="post"><input type="text" name="SearchWords" size ="35" maxlength ="75">
-       <input type="submit" value="Go!"></form>
-   </td>
-  </tr>
-</table>
-<br><br>
-<center><font face="Arial" color="#000000" size="+3">...Or select from some of our most popular....</font></center>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="pnwx_logo.png" alt="Pacific Northwest X-Ray Inc. Logo" class="logo-img">
+      </a>
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
+          <!-- Sun Icon SVG -->
+          <svg class="sun-icon" viewBox="0 0 24 24">
+            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+          </svg>
+          <!-- Moon Icon SVG -->
+          <svg class="moon-icon" viewBox="0 0 24 24">
+            <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.5-.1 1 .3 1.1.8.1.5-.2 1-.7 1.2-3.4 1.4-5.6 4.8-5.6 8.5 0 4.4 3.6 8 8 8 3.7 0 7.1-2.2 8.5-5.6.2-.5.7-.8 1.2-.7.5.1.9.6.8 1.1-.9 4.7-5 8.2-9.8 8.2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<br><br>
-<center>
- <table border=0 cellspacing=10 cellpadding=0>
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Hero & Search Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-badge">Desde 1997</span>
+        <h1 class="hero-title">Equipamentos e Acessórios de Radiologia Profissional</h1>
+        <p class="hero-subtitle">
+          A Pacific Northwest X-Ray Inc. fornece soluções médicas e industriais de alta qualidade. Faça uma busca direta em nosso catálogo ou explore nossas categorias populares abaixo.
+        </p>
+        
+        <!-- Search Form -->
+        <form class="search-form" action="/Search/" method="post">
+          <div class="search-container">
+            <input type="text" name="SearchWords" class="search-input" placeholder="Buscar produtos ou acessórios..." maxlength="75" required>
+            <button type="submit" class="search-button">
+              <!-- Search Icon SVG -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Buscar
+            </button>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Hero Image -->
+      <div class="hero-image-wrapper">
+        <img src="hero_imaging.png" alt="Modern Medical Imaging Machine Room" class="hero-img">
+      </div>
+    </section>
 
-  <tr>
-   <td>
-    <a href="/Accessories/LeadProducts/Aprons/Infab/LightningFast/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Fastest Shipping Lead Apparel.</font></a>
-   </td>
-    <td>&nbsp;&nbsp;</td>
-   <td>
-    <a href="/Accessories/Phantoms/Test/Fluoroscopy/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Resolution Test Tools/Phantoms.</font></a>
-   </td>
-  </tr>
+    <!-- Categories Section -->
+    <section class="categories-section">
+      <div class="section-header">
+        <h2 class="section-title">Categorias Populares</h2>
+        <p class="section-subtitle">Selecione uma das opções abaixo para visualizar os produtos e especificações:</p>
+      </div>
 
-  <tr>
-   <td>
-    <a href="/Accessories/LeadProducts/Aprons/Infab/Revolution/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Most Comfortable Aprons.</font></a>
-   </td>
-    <td>&nbsp;&nbsp;</td>
-   <td>
-    <a href="/Accessories/PatAsst/MerchantBoards/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">X-Ray Merchant Boards.</font></a>
-   </td>
-  </tr>
+      <div class="categories-grid">
+        <!-- Card 1 -->
+        <a href="/Accessories/LeadProducts/Aprons/Infab/LightningFast/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Fastest Shipping Lead Apparel</span>
+        </a>
 
-  <tr>
-   <td>
-    <a href="/Accessories/LeadProducts/Gloves/Proguard/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Surgical Radiation Reducing Gloves.</font></a>
-   </td>
-    <td>&nbsp;&nbsp;</td>
-   <td>
-    <a href="/Accessories/Phantoms/MRI/Pro-Project/ACR-Medium/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">ACR accredited Medium MRI Phantom.</font></a>
-   </td>
-  </tr>
+        <!-- Card 2 -->
+        <a href="/Accessories/Phantoms/Test/Fluoroscopy/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Resolution Test Tools / Phantoms</span>
+        </a>
 
-  <tr>
-   <td>
-    <a href="/Accessories/Phantoms/Test/LinePair/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Line-Pair Resolution Test Phantoms.</font></a>
-   </td>
-    <td>&nbsp;&nbsp;</td>
-   <td>
-    <a href="/Accessories/PosAides/Pet-Sitioner/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Small Animal Immobilizers.</font></a>
-   </td>
-  </tr>
+        <!-- Card 3 -->
+        <a href="/Accessories/LeadProducts/Aprons/Infab/Revolution/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Most Comfortable Aprons</span>
+        </a>
 
-  <tr>
-   <td>
-    <a href="/Accessories/LeadProducts/Windows/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Lead Glass.</font></a>
-   </td>
-    <td>&nbsp;&nbsp;</td>
-   <td>
-    <a href="/Accessories/LeadProducts/MobileBarriers/Infab/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Mobile Lead Barriers.</font></a>
-   </td>
-  </tr>
+        <!-- Card 4 -->
+        <a href="/Accessories/PatAsst/MerchantBoards/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">X-Ray Merchant Boards</span>
+        </a>
 
-  <tr>
-   <td>
-    <a href="/Accessories/Phantoms/Test/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">System Test Phantoms.</font></a>
-   </td>
-    <td>&nbsp;&nbsp;</td>
-   <td>
-    <a href="/Accessories/PatAsst/TablePads/X-Ray/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">X-Ray Table Pads.</font></a>
-   </td>
-  </tr>
+        <!-- Card 5 -->
+        <a href="/Accessories/LeadProducts/Gloves/Proguard/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Surgical Radiation Reducing Gloves</span>
+        </a>
 
-  <tr>
-   <td>
-    <a href="/Accessories/LeadProducts/Blockers-Shields/Curtains/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Lead Curtains.</font></a>
-   </td>
-    <td>&nbsp;&nbsp;</td>
-   <td>
-    <a href="/Equipment/DarkEquip/Rotex/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">Silver Recovery Systems.</font></a>
-   </td>
-  </tr>
+        <!-- Card 6 -->
+        <a href="/Accessories/Phantoms/MRI/Pro-Project/ACR-Medium/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">ACR accredited Medium MRI Phantom</span>
+        </a>
 
-  <tr>
-   <td>
-   </td>
-    <td>&nbsp;&nbsp;</td>
-   <td>
-    <a href="/Parts/Grids/"><img src="ButtonSkull.jpg" border=0 align=center><font face="Arial" color="#000000" size="+1">X-Ray Grids.</font></a>
-   </td>
-  </tr>
+        <!-- Card 7 -->
+        <a href="/Accessories/Phantoms/Test/LinePair/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Line-Pair Resolution Test Phantoms</span>
+        </a>
 
+        <!-- Card 8 -->
+        <a href="/Accessories/PosAides/Pet-Sitioner/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Small Animal Immobilizers</span>
+        </a>
 
- </table>
-</center>
-<br><br>
-<center><font face="Arial" size=+3><b><i>Pacific Northwest X-Ray Inc.</i></b></font></center>
-<center><font face="Arial" size=+1>P.O. Box 625 * Gresham, OR 97030 U.S.A.</font></center>
-<center><font face="Arial" size=+2><b>503-667-3000 * Toll Free U.S.A: 800-827-9729 * Fax : 503-666-8855</center>
-<br>
-<center><font face="Arial,Helvetica" color="#FFFF00" size=-1>This web site is our catalog! <u>No printed catalog is available.</u></font><br>
-<center><font color="#FFFFFF"><font size=-2>&copy;1997-2026 Pacific Northwest X-Ray Inc. - Sales &amp; Marketing Division - All Rights Reserved</font></font></center>
+        <!-- Card 9 -->
+        <a href="/Accessories/LeadProducts/Windows/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Lead Glass</span>
+        </a>
+
+        <!-- Card 10 -->
+        <a href="/Accessories/LeadProducts/MobileBarriers/Infab/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Mobile Lead Barriers</span>
+        </a>
+
+        <!-- Card 11 -->
+        <a href="/Accessories/Phantoms/Test/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">System Test Phantoms</span>
+        </a>
+
+        <!-- Card 12 -->
+        <a href="/Accessories/PatAsst/TablePads/X-Ray/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">X-Ray Table Pads</span>
+        </a>
+
+        <!-- Card 13 -->
+        <a href="/Accessories/LeadProducts/Blockers-Shields/Curtains/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Lead Curtains</span>
+        </a>
+
+        <!-- Card 14 -->
+        <a href="/Equipment/DarkEquip/Rotex/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">Silver Recovery Systems</span>
+        </a>
+
+        <!-- Card 15 -->
+        <a href="/Parts/Grids/" class="category-card">
+          <div class="category-icon-wrapper">
+            <img src="modern_skull.png" alt="" class="category-icon">
+          </div>
+          <span class="category-title">X-Ray Grids</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      
+      <!-- Info Column -->
+      <div class="footer-info">
+        <img src="pnwx_logo.png" alt="Pacific Northwest X-Ray Inc. Logo" class="footer-logo">
+        <p class="footer-address">
+          <strong>Pacific Northwest X-Ray Inc.</strong><br>
+          P.O. Box 625<br>
+          Gresham, OR 97030 U.S.A.
+        </p>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer-contact">
+        <h3 class="footer-title">Contato</h3>
+        <div class="contact-item">
+          <span class="contact-label">Telefone Local</span>
+          <a href="tel:503-667-3000" class="contact-value">503-667-3000</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Ligação Gratuita (EUA)</span>
+          <a href="tel:800-827-9729" class="contact-value">800-827-9729</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Fax</span>
+          <span class="contact-value">503-666-8855</span>
+        </div>
+      </div>
+
+      <!-- Catalog and Email CTA -->
+      <div class="footer-cta">
+        <h3 class="footer-title">Suporte e Catálogo</h3>
+        <p class="catalog-note">
+          Este site representa o nosso catálogo completo! Não fornecemos catálogo impresso.
+        </p>
+        <a href="http://www.pnwx.com/cgi-bin/e-mail" class="email-btn" target="_blank" rel="noopener noreferrer">
+          <!-- Email SVG Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          Entrar em Contato por E-mail
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 1997-2026 Pacific Northwest X-Ray Inc. - Sales & Marketing Division. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
